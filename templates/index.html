@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ridiculous Product Naming Generator</title>
-<!-- Load Tailwind CSS -->
-<script src="https://www.google.com/search?q=https://cdn.tailwindcss.com"></script>
-<link href="https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40400%3B600%3B800%26display%3Dswap" rel="stylesheet">
-<style>
-body { font-family: 'Inter', sans-serif; }
-.bg-scroll {
-background-image: linear-gradient(135deg, #1f2937 0%, #0c0a09 100%);
-background-attachment: fixed;
-}
-.shimmer-bg {
-background-color: #27272a;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridiculous Product Naming Generator</title>
+    <!-- Load Tailwind CSS - FIXED LINK -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font - FIXED LINK -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-scroll {
+            background-image: linear-gradient(135deg, #1f2937 0%, #0c0a09 100%);
+            background-attachment: fixed;
+        }
+        .shimmer-bg {
+            background-color: #27272a;
+        }
+    </style>
 </head>
 <body class="bg-scroll min-h-screen flex items-center justify-center p-4">
 
 <div class="w-full max-w-2xl bg-zinc-900 text-gray-100 p-8 md:p-10 rounded-xl shadow-2xl border border-zinc-700">
-    <h1 class="text-4xl font-extrabold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500">
+    <h1 class="4xl font-extrabold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500">
         Silly Naming Forge
     </h1>
     <p class="text-center text-zinc-400 mb-8">
@@ -46,7 +46,7 @@ background-color: #27272a;
             class="w-full py-3 mt-4 bg-cyan-600 hover:bg-cyan-700 rounded-lg font-semibold text-lg transition duration-200 shadow-lg shadow-cyan-600/50 flex items-center justify-center disabled:opacity-50">
             <svg id="loading-icon" class="hidden animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 004 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
             Generate Ridiculous Product
         </button>
@@ -57,7 +57,7 @@ background-color: #27272a;
         <div id="result" class="bg-zinc-800 p-5 rounded-lg border border-zinc-700 whitespace-pre-wrap leading-relaxed text-zinc-200 shimmer-bg">
             <!-- AI-generated content will go here -->
         </div>
-        <p id="error-message" class="text-red-400 mt-4 hidden">An error occurred during generation. Please check your API key and W&B configuration.</p>
+        <p id="error-message" class="text-red-400 mt-4 hidden">An error occurred during generation. Please check your API key.</p>
     </div>
 </div>
 
@@ -94,6 +94,7 @@ background-color: #27272a;
             const data = await response.json();
 
             if (response.ok && data.text) {
+                // Remove Markdown and set the text content
                 resultDiv.textContent = data.text.trim();
             } else {
                 // Handle API errors or missing 'text' field
@@ -111,7 +112,5 @@ background-color: #27272a;
         }
     });
 </script>
-
-
 </body>
 </html>
