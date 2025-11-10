@@ -23,10 +23,10 @@
 
 <div class="w-full max-w-2xl bg-zinc-900 text-gray-100 p-8 md:p-10 rounded-xl shadow-2xl border border-zinc-700">
     <h1 class="4xl font-extrabold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500">
-        Silly Naming Forge
+        CoreWeave Product Naming Forge
     </h1>
     <p class="text-center text-zinc-400 mb-8">
-        Generate absurd names, slogans, and concepts for non-existent products. All calls are logged to W&B!
+        Generate  names, slogans, and concepts for new products.
     </p>
 
     <form id="product-form" class="space-y-6">
@@ -48,12 +48,12 @@
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 004 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            Generate Ridiculous Product
+            Generate Product
         </button>
     </form>
 
     <div id="output-box" class="mt-8 pt-6 border-t border-zinc-700 hidden">
-        <h2 class="text-2xl font-bold mb-3 text-green-400">Ridiculous Result:</h2>
+        <h2 class="text-2xl font-bold mb-3 text-green-400">Exciting Result:</h2>
         <div id="result" class="bg-zinc-800 p-5 rounded-lg border border-zinc-700 whitespace-pre-wrap leading-relaxed text-zinc-200 shimmer-bg">
             <!-- AI-generated content will go here -->
         </div>
@@ -75,7 +75,7 @@
         button.disabled = true;
         button.textContent = 'Brainstorming Stupidity...';
         loadingIcon.classList.remove('hidden');
-        resultDiv.innerHTML = '<span class="text-zinc-500">Conjuring up the next big fail...</span>';
+        resultDiv.innerHTML = '<span class="text-zinc-500">Conjuring up the next big win...</span>';
         outputBox.classList.remove('hidden');
         errorMsg.classList.add('hidden');
 
@@ -107,7 +107,7 @@
         } finally {
             // Reset UI state
             button.disabled = false;
-            button.textContent = 'Generate Ridiculous Product';
+            button.textContent = 'Generate Product';
             loadingIcon.classList.add('hidden');
         }
     });
