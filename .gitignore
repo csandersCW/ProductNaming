@@ -1,0 +1,12 @@
+Ignore virtual environment directories
+.venv/
+venv/
+
+Ignore Python cache files
+pycache/
+*.pyc
+*.log
+
+Environment files, which contain secrets!
+.env
+.flaskenv
