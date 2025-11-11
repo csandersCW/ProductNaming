@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ridiculous Product Naming Generator</title>
-    <!-- Load Tailwind CSS - FIXED LINK -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter Font - FIXED LINK -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title> Product Naming Generator</title>
+    <!-- Load Tailwind CSS - Using Protocol-Relative URL to ensure HTTPS -->
+    <script src="//cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font - Using Protocol-Relative URL to ensure HTTPS -->
+    <link href="//fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .bg-scroll {
@@ -23,10 +23,10 @@
 
 <div class="w-full max-w-2xl bg-zinc-900 text-gray-100 p-8 md:p-10 rounded-xl shadow-2xl border border-zinc-700">
     <h1 class="4xl font-extrabold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500">
-        CoreWeave Product Naming Forge
+        Product Naming Forge
     </h1>
     <p class="text-center text-zinc-400 mb-8">
-        Generate  names, slogans, and concepts for new products.
+        Generate names, slogans, and concepts for new CoreWeave products.
     </p>
 
     <form id="product-form" class="space-y-6">
@@ -53,7 +53,7 @@
     </form>
 
     <div id="output-box" class="mt-8 pt-6 border-t border-zinc-700 hidden">
-        <h2 class="text-2xl font-bold mb-3 text-green-400">Exciting Result:</h2>
+        <h2 class="text-2xl font-bold mb-3 text-green-400">Fun Result:</h2>
         <div id="result" class="bg-zinc-800 p-5 rounded-lg border border-zinc-700 whitespace-pre-wrap leading-relaxed text-zinc-200 shimmer-bg">
             <!-- AI-generated content will go here -->
         </div>
@@ -75,7 +75,7 @@
         button.disabled = true;
         button.textContent = 'Brainstorming Stupidity...';
         loadingIcon.classList.remove('hidden');
-        resultDiv.innerHTML = '<span class="text-zinc-500">Conjuring up the next big win...</span>';
+        resultDiv.innerHTML = '<span class="text-zinc-500">Conjuring up the next big fail...</span>';
         outputBox.classList.remove('hidden');
         errorMsg.classList.add('hidden');
 
@@ -94,7 +94,7 @@
             const data = await response.json();
 
             if (response.ok && data.text) {
-                // Remove Markdown and set the text content
+                // The AI returns markdown, display it as plain text
                 resultDiv.textContent = data.text.trim();
             } else {
                 // Handle API errors or missing 'text' field
@@ -107,7 +107,7 @@
         } finally {
             // Reset UI state
             button.disabled = false;
-            button.textContent = 'Generate Product';
+            button.textContent = 'Generate Ridiculous Product';
             loadingIcon.classList.add('hidden');
         }
     });
